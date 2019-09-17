@@ -1,0 +1,24 @@
+{
+  "name": "frello",
+  "version": "0.0.1",
+  "description": "A todo app server",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abhi1992/frello_server.git"
+  },
+  "keywords": [
+    "javascript",
+    "node",
+    "express"
+  ],
+  "author": "Abhishek Banerjee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/abhi1992/frello_server/issues"
+  },
+  "homepage": "https://github.com/abhi1992/frello_server#readme"
+}
