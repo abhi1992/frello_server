@@ -4,6 +4,7 @@
   "description": "A todo app server",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon src/index.js --exec babel-node --presets babel-preset-env",
     "test": "test"
   },
   "repository": {
@@ -20,5 +21,19 @@
   "bugs": {
     "url": "https://github.com/abhi1992/frello_server/issues"
   },
-  "homepage": "https://github.com/abhi1992/frello_server#readme"
+  "homepage": "https://github.com/abhi1992/frello_server#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.2",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^6.4.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "nodemon": "^1.19.2"
+  }
 }
