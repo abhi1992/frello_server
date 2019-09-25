@@ -9,7 +9,7 @@ class BoardsController {
       title: req.body.title || '',
       taskListIds: [],
       background: {
-        bg_type: 'color',
+        bgType: 'color',
         data: {
           color: getRandomColor(req.body.color_id),
         },

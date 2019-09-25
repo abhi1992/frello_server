@@ -4,7 +4,7 @@ const boardSchema = mongoose.Schema({
   title: String,
   taskListIds: Array,
   background: {
-    bg_type: String,
+    bgType: String,
     data: {
       color: String,
     },
