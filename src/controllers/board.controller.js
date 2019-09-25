@@ -30,11 +30,11 @@ class BoardsController {
   }
 
   static findOne(req, res) {
-    Board.findById(req.params.boardId)
+    Board.findById(req.params.board_id)
       .then((board) => {
         if (!board) {
           return res.status(404).send({
-            message: `board not found with id ${req.params.boardId}`,
+            message: `board not found with id ${req.params.board_id}`,
           });
         }
         res.send(board);
@@ -42,11 +42,11 @@ class BoardsController {
       }).catch((err) => {
         if (err.kind === 'ObjectId') {
           return res.status(404).send({
-            message: `board not found with id ${req.params.boardId}`,
+            message: `board not found with id ${req.params.board_id}`,
           });
         }
         return res.status(500).send({
-          message: `Error retrieving board with id ${req.params.boardId}`,
+          message: `Error retrieving board with id ${req.params.board_id}`,
         });
       });
   }
@@ -78,11 +78,11 @@ class BoardsController {
       _.set(data, 'background.data.color', color);
     }
 
-    Board.findByIdAndUpdate(req.params.boardId, data, { new: true })
+    Board.findByIdAndUpdate(req.params.board_id, data, { new: true })
       .then((board) => {
         if (!board) {
           return res.status(404).send({
-            message: `Board not found with id ${req.params.boardId}`,
+            message: `Board not found with id ${req.params.board_id}`,
           });
         }
         res.send(board);
@@ -90,23 +90,23 @@ class BoardsController {
       }).catch((err) => {
         if (err.kind === 'ObjectId') {
           return res.status(404).send({
-            message: `Board not found with id ${req.params.boardId}`,
+            message: `Board not found with id ${req.params.board_id}`,
           });
         }
         return res.status(500).send({
-          message: `Error updating board with id ${req.params.boardId}`,
+          message: `Error updating board with id ${req.params.board_id}`,
         });
       });
   }
 
   static delete(req, res) {
-    Board.findByIdAndUpdate(req.params.boardId, {
+    Board.findByIdAndUpdate(req.params.board_id, {
       deleted: 1,
     }, { new: true })
       .then((board) => {
         if (!board) {
           return res.status(404).send({
-            message: `Board not found with id ${req.params.boardId}`,
+            message: `Board not found with id ${req.params.board_id}`,
           });
         }
         res.status(204).send();
@@ -114,11 +114,11 @@ class BoardsController {
       }).catch((err) => {
         if (err.kind === 'ObjectId' || err.name === 'NotFound') {
           return res.status(404).send({
-            message: `Board not found with id ${req.params.boardId}`,
+            message: `Board not found with id ${req.params.board_id}`,
           });
         }
         return res.status(500).send({
-          message: `Could not delete board with id ${req.params.boardId}`,
+          message: `Could not delete board with id ${req.params.board_id}`,
         });
       });
   }
