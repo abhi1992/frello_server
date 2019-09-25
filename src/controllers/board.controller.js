@@ -2,7 +2,7 @@ import _ from 'lodash';
 import Board from '../models/board.model';
 import getRandomColor from '../helper/utils';
 
-class boardsController {
+class BoardsController {
   static create(req, res) {
     // Create a Board
     const board = new Board({
@@ -124,4 +124,4 @@ class boardsController {
   }
 }
 
-export default boardsController;
+export default BoardsController;
